@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="QueueServiceWebApp.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ImanageFileCache" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\Temp\QueueServiceWebApp\ImanageFileCache</Value>
+    </Setting>
+    <Setting Name="LogFilePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\MSMQHandlerService\Logs</Value>
+    </Setting>
+    <Setting Name="LogLevel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Debug</Value>
+    </Setting>
+    <Setting Name="QueueServicePurgeTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">24.00:00:00</Value>
+    </Setting>
+    <Setting Name="QueueServiceResponseTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">08:00:00</Value>
+    </Setting>
+    <Setting Name="QueueServiceMaxRetries" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="QueueServicePurgeTime" Type="System.DateTime" Scope="Application">
+      <Value Profile="(Default)">04/09/2020 15:38:00</Value>
+    </Setting>
+    <Setting Name="LogFileSizeMB" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

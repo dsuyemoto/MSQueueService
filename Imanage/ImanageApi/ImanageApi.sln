@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imanage", "Imanage\Imanage.csproj", "{3B7D7C6D-AA43-435C-8151-C24D9D501EC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportToImanageApplication", "ImportToImanageApplication\ImportToImanageApplication.csproj", "{F2BCD829-B11A-4BD2-B673-A7668D63D901}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imanage.Tests", "ImanageTests\Imanage.Tests.csproj", "{2DCA7279-AFD9-43C2-A6F9-A63130598FF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IwovWebService", "IwovWebService\IwovWebService.csproj", "{75DD89A4-F1DF-4E6A-9963-C13A938F3A09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Remote Debugging|Any CPU = Remote Debugging|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B7D7C6D-AA43-435C-8151-C24D9D501EC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B7D7C6D-AA43-435C-8151-C24D9D501EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B7D7C6D-AA43-435C-8151-C24D9D501EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B7D7C6D-AA43-435C-8151-C24D9D501EC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B7D7C6D-AA43-435C-8151-C24D9D501EC3}.Remote Debugging|Any CPU.ActiveCfg = Remote Debugging|Any CPU
+		{3B7D7C6D-AA43-435C-8151-C24D9D501EC3}.Remote Debugging|Any CPU.Build.0 = Remote Debugging|Any CPU
+		{F2BCD829-B11A-4BD2-B673-A7668D63D901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2BCD829-B11A-4BD2-B673-A7668D63D901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2BCD829-B11A-4BD2-B673-A7668D63D901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2BCD829-B11A-4BD2-B673-A7668D63D901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2BCD829-B11A-4BD2-B673-A7668D63D901}.Remote Debugging|Any CPU.ActiveCfg = Remote Debugging|Any CPU
+		{F2BCD829-B11A-4BD2-B673-A7668D63D901}.Remote Debugging|Any CPU.Build.0 = Remote Debugging|Any CPU
+		{2DCA7279-AFD9-43C2-A6F9-A63130598FF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DCA7279-AFD9-43C2-A6F9-A63130598FF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DCA7279-AFD9-43C2-A6F9-A63130598FF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DCA7279-AFD9-43C2-A6F9-A63130598FF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DCA7279-AFD9-43C2-A6F9-A63130598FF0}.Remote Debugging|Any CPU.ActiveCfg = Remote Debugging|Any CPU
+		{2DCA7279-AFD9-43C2-A6F9-A63130598FF0}.Remote Debugging|Any CPU.Build.0 = Remote Debugging|Any CPU
+		{75DD89A4-F1DF-4E6A-9963-C13A938F3A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75DD89A4-F1DF-4E6A-9963-C13A938F3A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75DD89A4-F1DF-4E6A-9963-C13A938F3A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75DD89A4-F1DF-4E6A-9963-C13A938F3A09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75DD89A4-F1DF-4E6A-9963-C13A938F3A09}.Remote Debugging|Any CPU.ActiveCfg = Debug|Any CPU
+		{75DD89A4-F1DF-4E6A-9963-C13A938F3A09}.Remote Debugging|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {96D42B81-B041-438D-9DAB-88E2CF56BBEE}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.lw.com/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Imanage\\Imanage.csproj
+		SccProjectName1 = Imanage
+		SccLocalPath1 = Imanage
+		SccProjectUniqueName2 = ImportToImanageApplication\\ImportToImanageApplication.csproj
+		SccProjectName2 = ImportToImanageApplication
+		SccLocalPath2 = ImportToImanageApplication
+		SccProjectUniqueName3 = ImanageTests\\Imanage.Tests.csproj
+		SccProjectName3 = ImanageTests
+		SccLocalPath3 = ImanageTests
+		SccProjectUniqueName4 = IwovWebService\\IwovWebService.csproj
+		SccProjectName4 = IwovWebService
+		SccLocalPath4 = IwovWebService
+	EndGlobalSection
+EndGlobal

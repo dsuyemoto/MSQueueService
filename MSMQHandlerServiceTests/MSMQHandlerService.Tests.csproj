@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{12D547F2-392C-4090-BEB7-508104F97746}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MSMQHandlerServiceTests</RootNamespace>
+    <AssemblyName>MSMQHandlerServiceTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CacheServiceTests.cs" />
+    <Compile Include="Services\CicServiceTests.cs" />
+    <Compile Include="Services\EwsServiceTests.cs" />
+    <Compile Include="Services\ImanageServiceTests.cs" />
+    <Compile Include="Services\ServiceNowServiceTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EWS\EWS\EWS.csproj">
+      <Project>{AC1D1FEB-3731-4CEF-BFAA-BD2580D7C292}</Project>
+      <Name>EWS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Imanage\ImanageApi\Imanage\Imanage.csproj">
+      <Project>{3B7D7C6D-AA43-435C-8151-C24D9D501EC3}</Project>
+      <Name>Imanage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PureConnect\PureConnect\PureConnect\PureConnect.csproj">
+      <Project>{A3E73ED5-F392-45F0-9AE7-54EE2E129B13}</Project>
+      <Name>PureConnect</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceNow\ServiceNow\ServiceNow\ServiceNow.csproj">
+      <Project>{00A3F742-B495-42E5-A9DD-38B37607F8B9}</Project>
+      <Name>ServiceNow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LoggerHelper\LoggerHelper.csproj">
+      <Project>{1e5af230-e049-4d8d-8da9-a3ef732af465}</Project>
+      <Name>LoggerHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MSMQHandlerService\MSMQHandlerService.csproj">
+      <Project>{0c20fcf5-0dd5-4709-b65e-1b6d575332d1}</Project>
+      <Name>MSMQHandlerService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QueueServiceWebApp\QueueServiceWebApp.csproj">
+      <Project>{14a7b34d-de52-4e00-8893-12315e842665}</Project>
+      <Name>QueueServiceWebApp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QueueService\QueueService.csproj">
+      <Project>{7A25F736-D4DC-4A6A-B8C0-7FD03A72688F}</Project>
+      <Name>QueueService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Castle.Core">
+      <Version>4.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="Moq">
+      <Version>4.13.1</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="NUnit">
+      <Version>3.9.0</Version>
+    </PackageReference>
+    <PackageReference Include="NUnit3TestAdapter">
+      <Version>3.9.0</Version>
+    </PackageReference>
+    <PackageReference Include="RestSharp">
+      <Version>106.12.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,1956 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://worksite.imanage.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://worksite.imanage.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://worksite.imanage.com">
+      <s:element name="SearchDocuments" type="tns:SearchDocumentsInput" />
+      <s:complexType name="SearchDocumentsInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Databases" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutputProfile" type="tns:ArrayOfImProfileAttributeID" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProfileSearchParameters" type="tns:ArrayOfProfileSearchParameter" />
+          <s:element minOccurs="1" maxOccurs="1" name="SearchEmail" type="tns:imSearchEmail" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullTextSearch" type="tns:FullTextSearch" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfImProfileAttributeID">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="imProfileAttributeID" type="tns:imProfileAttributeID" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="imProfileAttributeID">
+        <s:restriction base="s:string">
+          <s:enumeration value="imProfileDatabase" />
+          <s:enumeration value="imProfileDocNum" />
+          <s:enumeration value="imProfileVersion" />
+          <s:enumeration value="imProfileDescription" />
+          <s:enumeration value="imProfileName" />
+          <s:enumeration value="imProfileAuthor" />
+          <s:enumeration value="imProfileOperator" />
+          <s:enumeration value="imProfileType" />
+          <s:enumeration value="imProfileClass" />
+          <s:enumeration value="imProfileSubClass" />
+          <s:enumeration value="imProfileEditDate" />
+          <s:enumeration value="imProfileCreateDate" />
+          <s:enumeration value="imProfileRetainDays" />
+          <s:enumeration value="imProfileSize" />
+          <s:enumeration value="imProfileIndexable" />
+          <s:enumeration value="imProfileIsRelated" />
+          <s:enumeration value="imProfileLocation" />
+          <s:enumeration value="imProfileDefaultSecurity" />
+          <s:enumeration value="imProfileLastUser" />
+          <s:enumeration value="imProfileInUseBy" />
+          <s:enumeration value="imProfileNetNode" />
+          <s:enumeration value="imProfileInUse" />
+          <s:enumeration value="imProfileCheckedOut" />
+          <s:enumeration value="imProfileArchived" />
+          <s:enumeration value="imProfileComment" />
+          <s:enumeration value="imProfileCustom1" />
+          <s:enumeration value="imProfileCustom2" />
+          <s:enumeration value="imProfileCustom3" />
+          <s:enumeration value="imProfileCustom4" />
+          <s:enumeration value="imProfileCustom5" />
+          <s:enumeration value="imProfileCustom6" />
+          <s:enumeration value="imProfileCustom7" />
+          <s:enumeration value="imProfileCustom8" />
+          <s:enumeration value="imProfileCustom9" />
+          <s:enumeration value="imProfileCustom10" />
+          <s:enumeration value="imProfileCustom11" />
+          <s:enumeration value="imProfileCustom12" />
+          <s:enumeration value="imProfileCustom13" />
+          <s:enumeration value="imProfileCustom14" />
+          <s:enumeration value="imProfileCustom15" />
+          <s:enumeration value="imProfileCustom16" />
+          <s:enumeration value="imProfileCustom17" />
+          <s:enumeration value="imProfileCustom18" />
+          <s:enumeration value="imProfileCustom19" />
+          <s:enumeration value="imProfileCustom20" />
+          <s:enumeration value="imProfileCustom21" />
+          <s:enumeration value="imProfileCustom22" />
+          <s:enumeration value="imProfileCustom23" />
+          <s:enumeration value="imProfileCustom24" />
+          <s:enumeration value="imProfileCustom25" />
+          <s:enumeration value="imProfileCustom26" />
+          <s:enumeration value="imProfileCustom27" />
+          <s:enumeration value="imProfileCustom28" />
+          <s:enumeration value="imProfileCustom29" />
+          <s:enumeration value="imProfileCustom30" />
+          <s:enumeration value="imProfileCustom1Description" />
+          <s:enumeration value="imProfileCustom2Description" />
+          <s:enumeration value="imProfileCustom3Description" />
+          <s:enumeration value="imProfileCustom4Description" />
+          <s:enumeration value="imProfileCustom5Description" />
+          <s:enumeration value="imProfileCustom6Description" />
+          <s:enumeration value="imProfileCustom7Description" />
+          <s:enumeration value="imProfileCustom8Description" />
+          <s:enumeration value="imProfileCustom9Description" />
+          <s:enumeration value="imProfileCustom10Description" />
+          <s:enumeration value="imProfileCustom11Description" />
+          <s:enumeration value="imProfileCustom12Description" />
+          <s:enumeration value="imProfileCustom29Description" />
+          <s:enumeration value="imProfileCustom30Description" />
+          <s:enumeration value="imProfileAuthorDescription" />
+          <s:enumeration value="imProfileOperatorDescription" />
+          <s:enumeration value="imProfileTypeDescription" />
+          <s:enumeration value="imProfileClassDescription" />
+          <s:enumeration value="imProfileSubClassDescription" />
+          <s:enumeration value="imProfileLastUserDescription" />
+          <s:enumeration value="imProfileInUseByDescription" />
+          <s:enumeration value="imProfileEditTime" />
+          <s:enumeration value="imProfileExtension" />
+          <s:enumeration value="imProfileFullText" />
+          <s:enumeration value="imProfileSubType" />
+          <s:enumeration value="imProfileEditProfileTime" />
+          <s:enumeration value="imProfileContainerID" />
+          <s:enumeration value="imProfileCustom31" />
+          <s:enumeration value="imProfileMarkedForArchive" />
+          <s:enumeration value="imProfileEchoEnabled" />
+          <s:enumeration value="imProfileAccessTime" />
+          <s:enumeration value="imProfileMessageUniqueID" />
+          <s:enumeration value="imProfileIsExternal" />
+          <s:enumeration value="imProfileHasAttachment" />
+          <s:enumeration value="imProfileExternalAsNormal" />
+          <s:enumeration value="imProfileProjectItemSID" />
+          <s:enumeration value="imProfileProjectItemParentSID" />
+          <s:enumeration value="imProfileCheckoutPath" />
+          <s:enumeration value="imProfileCheckoutDueDate" />
+          <s:enumeration value="imProfileCheckoutComments" />
+          <s:enumeration value="imProfileCheckoutWhen" />
+          <s:enumeration value="imProfileQuickRetrieve" />
+          <s:enumeration value="imProfileFrozen" />
+          <s:enumeration value="imProfileDeclareDate" />
+          <s:enumeration value="imProfileFileCreateDate" />
+          <s:enumeration value="imProfileFileModifyDate" />
+          <s:enumeration value="imProfileSystemCreateDate" />
+          <s:enumeration value="imProfileSystemModifyDate" />
+          <s:enumeration value="imProfileRestorable" />
+          <s:enumeration value="imProfileHipaaCompliant" />
+          <s:enumeration value="imProfileFtLanguageId" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfProfileSearchParameter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProfileSearchParameter" nillable="true" type="tns:ProfileSearchParameter" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProfileSearchParameter">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AttributeID" type="tns:imProfileAttributeID" />
+          <s:element minOccurs="0" maxOccurs="1" name="SearchValue" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="imSearchEmail">
+        <s:restriction base="s:string">
+          <s:enumeration value="imSearchEmailOrDocuments" />
+          <s:enumeration value="imSearchEmailOnly" />
+          <s:enumeration value="imSearchDocumentsOnly" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="FullTextSearch">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SearchLocation" type="tns:imFullTextSearchLocation" />
+          <s:element minOccurs="0" maxOccurs="1" name="SearchValue" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="imFullTextSearchLocation">
+        <s:restriction base="s:string">
+          <s:enumeration value="imFullTextAnywhere" />
+          <s:enumeration value="imFullTextComment" />
+          <s:enumeration value="imFullTextDescription" />
+          <s:enumeration value="imFullTextBody" />
+          <s:enumeration value="imFullTextCommentDescription" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="OutputMask">
+        <s:list>
+          <s:simpleType>
+            <s:restriction base="s:string">
+              <s:enumeration value="Profile" />
+              <s:enumeration value="Security" />
+              <s:enumeration value="DocumentContent" />
+              <s:enumeration value="History" />
+              <s:enumeration value="CustomProperties" />
+              <s:enumeration value="AdditionalProperties" />
+              <s:enumeration value="SubFolders" />
+              <s:enumeration value="FolderContent" />
+            </s:restriction>
+          </s:simpleType>
+        </s:list>
+      </s:simpleType>
+      <s:element name="SearchDocumentsResult" type="tns:SearchDocumentsOutput" />
+      <s:complexType name="SearchDocumentsOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Documents" type="tns:ArrayOfDocument" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDocument">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Document" nillable="true" type="tns:Document" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Document">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Database" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Profile" type="tns:ArrayOfProfileItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="Security" type="tns:ObjectSecurity" />
+          <s:element minOccurs="0" maxOccurs="1" name="History" type="tns:ArrayOfHistoryItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProfileItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProfileItem" nillable="true" type="tns:ProfileItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProfileItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AttributeID" type="tns:imProfileAttributeID" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ObjectSecurity">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IncludeExternalUsersInDefaultSecurity" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExternallyVisible" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Inherited" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Acl" type="tns:ArrayOfAclItem" />
+          <s:element minOccurs="1" maxOccurs="1" name="DefaultVisibility" type="tns:imSecurityType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAclItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AclItem" nillable="true" type="tns:AclItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AclItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="tns:AclType" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Right" type="tns:imAccessRight" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="AclType">
+        <s:restriction base="s:string">
+          <s:enumeration value="User" />
+          <s:enumeration value="Group" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="imAccessRight">
+        <s:restriction base="s:string">
+          <s:enumeration value="imRightNone" />
+          <s:enumeration value="imRightRead" />
+          <s:enumeration value="imRightReadWrite" />
+          <s:enumeration value="imRightAll" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="imSecurityType">
+        <s:restriction base="s:string">
+          <s:enumeration value="imPrivate" />
+          <s:enumeration value="imPublic" />
+          <s:enumeration value="imView" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfHistoryItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HistoryItem" nillable="true" type="tns:HistoryItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HistoryItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Number" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Operation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Application" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Duration" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PagesPrinted" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfError">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Error" nillable="true" type="tns:Error" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Error">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProfileErrors" type="tns:ArrayOfProfileError" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProfileError">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProfileError" nillable="true" type="tns:ProfileError" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProfileError">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AttributeID" type="tns:imProfileAttributeID" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateDocuments" type="tns:CreateDocumentsInput" />
+      <s:complexType name="CreateDocumentsInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseFolderProfile" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Documents" type="tns:ArrayOfDocument" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutputProfile" type="tns:ArrayOfImProfileAttributeID" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateDocumentsResult" type="tns:CreateDocumentsOutput" />
+      <s:complexType name="CreateDocumentsOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Documents" type="tns:ArrayOfDocument" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadDocuments" type="tns:UploadDocumentsInput" />
+      <s:complexType name="UploadDocumentsInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Documents" type="tns:ArrayOfUploadDocument" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUploadDocument">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UploadDocument" nillable="true" type="tns:UploadDocument" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UploadDocument">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadDocumentsResult" type="tns:UploadDocumentsOutput" />
+      <s:complexType name="UploadDocumentsOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Documents" type="tns:ArrayOfUploadDocument" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDatabasesResult" type="tns:GetDatabasesOutput" />
+      <s:complexType name="GetDatabasesOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Databases" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteDocuments" type="tns:DeleteDocumentsInput" />
+      <s:complexType name="DeleteDocumentsInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectIDs" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteDocumentsResult" type="tns:DeleteDocumentsOutput" />
+      <s:complexType name="DeleteDocumentsOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDocuments" type="tns:GetDocumentsInput" />
+      <s:complexType name="GetDocumentsInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectIDs" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutputProfile" type="tns:ArrayOfImProfileAttributeID" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDocumentsResult" type="tns:GetDocumentsOutput" />
+      <s:complexType name="GetDocumentsOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Documents" type="tns:ArrayOfDocument" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetDocumentsProperties" type="tns:SetDocumentsPropertiesInput" />
+      <s:complexType name="SetDocumentsPropertiesInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Documents" type="tns:ArrayOfDocument" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutputProfile" type="tns:ArrayOfImProfileAttributeID" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetDocumentsPropertiesResult" type="tns:SetDocumentsPropertiesOutput" />
+      <s:complexType name="SetDocumentsPropertiesOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Documents" type="tns:ArrayOfDocument" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckOut" type="tns:CheckOutInput" />
+      <s:complexType name="CheckOutInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectIDs" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DueDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CheckOutOption" type="tns:imCheckOutOptions" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutputProfile" type="tns:ArrayOfImProfileAttributeID" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="imCheckOutOptions">
+        <s:restriction base="s:string">
+          <s:enumeration value="imDontReplaceExistingFile" />
+          <s:enumeration value="imReplaceExistingFile" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="CheckOutResult" type="tns:CheckOutOutput" />
+      <s:complexType name="CheckOutOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Documents" type="tns:ArrayOfDocument" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckinReplaceOriginal" type="tns:CheckinReplaceOriginalInput" />
+      <s:complexType name="CheckinReplaceOriginalInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Documents" type="tns:ArrayOfDocument" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckInReplaceOriginalResult" type="tns:CheckinReplaceOriginalOutput" />
+      <s:complexType name="CheckinReplaceOriginalOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckinUndo" type="tns:CheckinUndoInput" />
+      <s:complexType name="CheckinUndoInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectIDs" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckInUndoResult" type="tns:CheckinUndoOutput" />
+      <s:complexType name="CheckinUndoOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckInNewVersion" type="tns:CheckinNewVersionInput" />
+      <s:complexType name="CheckinNewVersionInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseFolderProfile" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Documents" type="tns:ArrayOfDocument" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutputProfile" type="tns:ArrayOfImProfileAttributeID" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckInNewVersionResult" type="tns:CheckinNewVersionOutput" />
+      <s:complexType name="CheckinNewVersionOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Documents" type="tns:ArrayOfDocument" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckInNewDocument" type="tns:CheckinNewDocumentInput" />
+      <s:complexType name="CheckinNewDocumentInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseFolderProfile" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Documents" type="tns:ArrayOfDocument" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutputProfile" type="tns:ArrayOfImProfileAttributeID" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckInNewDocumentResult" type="tns:CheckinNewDocumentOutput" />
+      <s:complexType name="CheckinNewDocumentOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Documents" type="tns:ArrayOfDocument" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SearchWorkspacesInput" type="tns:SearchWorkspacesInput" />
+      <s:complexType name="SearchWorkspacesInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Databases" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutputProfile" type="tns:ArrayOfImProfileAttributeID" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProfileSearchParameters" type="tns:ArrayOfProfileSearchParameter" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkspaceSearchParameters" type="tns:ArrayOfFolderSearchParameter" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFolderSearchParameter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FolderSearchParameter" nillable="true" type="tns:FolderSearchParameter" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FolderSearchParameter">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AttributeID" type="tns:imFolderAttributeID" />
+          <s:element minOccurs="0" maxOccurs="1" name="SearchValue" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="imFolderAttributeID">
+        <s:restriction base="s:string">
+          <s:enumeration value="imFolderID" />
+          <s:enumeration value="imFolderParentID" />
+          <s:enumeration value="imFolderDefaultSecurity" />
+          <s:enumeration value="imFolderName" />
+          <s:enumeration value="imFolderOwner" />
+          <s:enumeration value="imFolderDescription" />
+          <s:enumeration value="imFolderLocation" />
+          <s:enumeration value="imFolderType" />
+          <s:enumeration value="imFolderSubtype" />
+          <s:enumeration value="imFolderInherits" />
+          <s:enumeration value="imFolderProfileID" />
+          <s:enumeration value="imFolderVersion" />
+          <s:enumeration value="imFolderCustom1" />
+          <s:enumeration value="imFolderCustom2" />
+          <s:enumeration value="imFolderCustom3" />
+          <s:enumeration value="imFolderRootFolderID" />
+          <s:enumeration value="imFolderRootFolderType" />
+          <s:enumeration value="imFolderIsContentSearch" />
+          <s:enumeration value="imFolderIsFolderSearch" />
+          <s:enumeration value="imFolderEmail" />
+          <s:enumeration value="imFolderHiddenOnDesktop" />
+          <s:enumeration value="imFolderEditDate" />
+          <s:enumeration value="imFolderReferenceType" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SearchWorkspacesResult" type="tns:SearchWorkspacesOutput" />
+      <s:complexType name="SearchWorkspacesOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Workspaces" type="tns:ArrayOfWorkspace" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWorkspace">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Workspace" nillable="true" type="tns:Workspace" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Workspace">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Database" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FolderID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubFolders" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomProperties" type="tns:ArrayOfCustomProperty" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalProperties" type="tns:ArrayOfAdditionalProperty" />
+          <s:element minOccurs="0" maxOccurs="1" name="Profile" type="tns:ArrayOfProfileItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="Security" type="tns:ObjectSecurity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCustomProperty">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CustomProperty" nillable="true" type="tns:CustomProperty" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomProperty">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AttributeID" type="tns:imFolderAttributeID" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAdditionalProperty">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AdditionalProperty" nillable="true" type="tns:AdditionalProperty" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AdditionalProperty">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetWorkspaces" type="tns:GetWorkspacesInput" />
+      <s:complexType name="GetWorkspacesInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectIDs" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutputProfile" type="tns:ArrayOfImProfileAttributeID" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetWorkspacesResult" type="tns:GetWorkspacesOutput" />
+      <s:complexType name="GetWorkspacesOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Workspaces" type="tns:ArrayOfWorkspace" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetWorkspacesProperties" type="tns:SetWorkspacesPropertiesInput" />
+      <s:complexType name="SetWorkspacesPropertiesInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Workspaces" type="tns:ArrayOfWorkspace" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutputProfile" type="tns:ArrayOfImProfileAttributeID" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetWorkspacesPropertiesResult" type="tns:SetWorkspacesPropertiesOutput" />
+      <s:complexType name="SetWorkspacesPropertiesOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Workspaces" type="tns:ArrayOfWorkspace" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateFolders" type="tns:CreateFoldersInput" />
+      <s:complexType name="CreateFoldersInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Folders" type="tns:ArrayOfDocumentFolder" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDocumentFolder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DocumentFolder" nillable="true" type="tns:DocumentFolder" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DocumentFolder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailPrefix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParentID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRootLevelFolder" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubFolders" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contents" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomProperties" type="tns:ArrayOfCustomProperty" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalProperties" type="tns:ArrayOfAdditionalProperty" />
+          <s:element minOccurs="0" maxOccurs="1" name="Security" type="tns:ObjectSecurity" />
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="tns:imObjectType" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="imObjectType">
+        <s:restriction base="s:string">
+          <s:enumeration value="imTypeAdditionalProperties" />
+          <s:enumeration value="imTypeAdditionalProperty" />
+          <s:enumeration value="imTypeAndQuery" />
+          <s:enumeration value="imTypeAttachment" />
+          <s:enumeration value="imTypeAttachments" />
+          <s:enumeration value="imTypeAttributeDefinition" />
+          <s:enumeration value="imTypeAttributeDefinitions" />
+          <s:enumeration value="imTypeAttributeSelections" />
+          <s:enumeration value="imTypeBodiedFolder" />
+          <s:enumeration value="imTypeCancel" />
+          <s:enumeration value="imTypeCaptions" />
+          <s:enumeration value="imTypeCheckinResult" />
+          <s:enumeration value="imTypeConnectorFolder" />
+          <s:enumeration value="imTypeConnectorFolders" />
+          <s:enumeration value="imTypeContent" />
+          <s:enumeration value="imTypeContents" />
+          <s:enumeration value="imTypeContentShortcut" />
+          <s:enumeration value="imTypeContentShortcuts" />
+          <s:enumeration value="imTypeControl" />
+          <s:enumeration value="imTypeControls" />
+          <s:enumeration value="imTypeCustomAttribute" />
+          <s:enumeration value="imTypeCustomAttributes" />
+          <s:enumeration value="imTypeCustomProperties" />
+          <s:enumeration value="imTypeCustomProperty" />
+          <s:enumeration value="imTypeDatabase" />
+          <s:enumeration value="imTypeDatabases" />
+          <s:enumeration value="imTypeDate" />
+          <s:enumeration value="imTypeDateRange" />
+          <s:enumeration value="imTypeDMS" />
+          <s:enumeration value="imTypeDocument" />
+          <s:enumeration value="imTypeDocumentClass" />
+          <s:enumeration value="imTypeDocumentClasses" />
+          <s:enumeration value="imTypeDocumentFolder" />
+          <s:enumeration value="imTypeDocumentFolders" />
+          <s:enumeration value="imTypeDocumentHistory" />
+          <s:enumeration value="imTypeDocuments" />
+          <s:enumeration value="imTypeDocumentSearchFolder" />
+          <s:enumeration value="imTypeDocumentSearchFolders" />
+          <s:enumeration value="imTypeDocumentType" />
+          <s:enumeration value="imTypeDocumentTypes" />
+          <s:enumeration value="imTypeEvent" />
+          <s:enumeration value="imTypeEventFolder" />
+          <s:enumeration value="imTypeEventFolders" />
+          <s:enumeration value="imTypeEventHandler" />
+          <s:enumeration value="imTypeEventHandlers" />
+          <s:enumeration value="imTypeEvents" />
+          <s:enumeration value="imTypeEventSearchParameter" />
+          <s:enumeration value="imTypeEventSearchParameters" />
+          <s:enumeration value="imTypeFavoritesFolder" />
+          <s:enumeration value="imTypeFavoritesFolders" />
+          <s:enumeration value="imTypeFieldQuery" />
+          <s:enumeration value="imTypeFolder" />
+          <s:enumeration value="imTypeFolders" />
+          <s:enumeration value="imTypeFolderSearchParameter" />
+          <s:enumeration value="imTypeFolderSearchParameters" />
+          <s:enumeration value="imTypeFolderShortcut" />
+          <s:enumeration value="imTypeFolderShortcuts" />
+          <s:enumeration value="imTypeForm" />
+          <s:enumeration value="imTypeForms" />
+          <s:enumeration value="imTypeGenericBodiedFolder" />
+          <s:enumeration value="imTypeGenericBodiedFolders" />
+          <s:enumeration value="imTypeGroup" />
+          <s:enumeration value="imTypeGroupACL" />
+          <s:enumeration value="imTypeGroupACLs" />
+          <s:enumeration value="imTypeGroups" />
+          <s:enumeration value="imTypeHasLocation" />
+          <s:enumeration value="imTypeHasProfile" />
+          <s:enumeration value="imTypeHasProfiles" />
+          <s:enumeration value="imTypeHistoryList" />
+          <s:enumeration value="imTypeLaunchMethod" />
+          <s:enumeration value="imTypeLaunchMethods" />
+          <s:enumeration value="imTypeLinkListFolder" />
+          <s:enumeration value="imTypeLinkListFolders" />
+          <s:enumeration value="imTypeLocation" />
+          <s:enumeration value="imTypeMessage" />
+          <s:enumeration value="imTypeMessageFolder" />
+          <s:enumeration value="imTypeMessageFolders" />
+          <s:enumeration value="imTypeMessages" />
+          <s:enumeration value="imTypeMessageSearchParameter" />
+          <s:enumeration value="imTypeMessageSearchParameters" />
+          <s:enumeration value="imTypeNoteFolder" />
+          <s:enumeration value="imTypeNoteFolders" />
+          <s:enumeration value="imTypeObject" />
+          <s:enumeration value="imTypeObjects" />
+          <s:enumeration value="imTypeObjectSort" />
+          <s:enumeration value="imTypeObjectTypes" />
+          <s:enumeration value="imTypeOrQuery" />
+          <s:enumeration value="imTypeProfile" />
+          <s:enumeration value="imTypeProfiled" />
+          <s:enumeration value="imTypeProfiledContent" />
+          <s:enumeration value="imTypeProfiledFolder" />
+          <s:enumeration value="imTypeProfileError" />
+          <s:enumeration value="imTypeProfileErrors" />
+          <s:enumeration value="imTypeProfileFullTextSearchParameter" />
+          <s:enumeration value="imTypeProfiles" />
+          <s:enumeration value="imTypeProfileSearchParameter" />
+          <s:enumeration value="imTypeProfileSearchParameters" />
+          <s:enumeration value="imTypeProfileUpdateResult" />
+          <s:enumeration value="imTypeQueries" />
+          <s:enumeration value="imTypeQuery" />
+          <s:enumeration value="imTypeRelatedDocuments" />
+          <s:enumeration value="imTypeRelativeDate" />
+          <s:enumeration value="imTypeRole" />
+          <s:enumeration value="imTypeRoleEditCreate" />
+          <s:enumeration value="imTypeRoleEditCreates" />
+          <s:enumeration value="imTypeRoles" />
+          <s:enumeration value="imTypeRoleSearchProfile" />
+          <s:enumeration value="imTypeRoleSearchProfiles" />
+          <s:enumeration value="imTypeRule" />
+          <s:enumeration value="imTypeRuleEventType" />
+          <s:enumeration value="imTypeRuleEventTypes" />
+          <s:enumeration value="imTypeRules" />
+          <s:enumeration value="imTypeSecurity" />
+          <s:enumeration value="imTypeSecurityTemplate" />
+          <s:enumeration value="imTypeSecurityTemplates" />
+          <s:enumeration value="imTypeSession" />
+          <s:enumeration value="imTypeSessions" />
+          <s:enumeration value="imTypeSessionSearchNotification" />
+          <s:enumeration value="imTypeStream" />
+          <s:enumeration value="imTypeStrings" />
+          <s:enumeration value="imTypeSubscriptionFolder" />
+          <s:enumeration value="imTypeSubscriptionFolders" />
+          <s:enumeration value="imTypeSubscriptionFolderSearchParameters" />
+          <s:enumeration value="imTypeSubscriptionFolderShortcuts" />
+          <s:enumeration value="imTypeSyncResult" />
+          <s:enumeration value="imTypeTab" />
+          <s:enumeration value="imTypeTabContents" />
+          <s:enumeration value="imTypeTabs" />
+          <s:enumeration value="imTypeTask" />
+          <s:enumeration value="imTypeTaskFolder" />
+          <s:enumeration value="imTypeTaskFolders" />
+          <s:enumeration value="imTypeTasks" />
+          <s:enumeration value="imTypeTaskSearchParameter" />
+          <s:enumeration value="imTypeTaskSearchParameters" />
+          <s:enumeration value="imTypeType" />
+          <s:enumeration value="imTypeUser" />
+          <s:enumeration value="imTypeUserACL" />
+          <s:enumeration value="imTypeUserACLs" />
+          <s:enumeration value="imTypeUserPreferences" />
+          <s:enumeration value="imTypeUsers" />
+          <s:enumeration value="imTypeWorkArea" />
+          <s:enumeration value="imTypeWorkspace" />
+          <s:enumeration value="imTypeWorkspaces" />
+          <s:enumeration value="imTypeWorkspaceSearchFolder" />
+          <s:enumeration value="imTypeWorkspaceSearchFolders" />
+          <s:enumeration value="imTypeWorkspaceSearchParameters" />
+          <s:enumeration value="imTypeWorkspaceShortcuts" />
+          <s:enumeration value="imTypeNone" />
+          <s:enumeration value="imTypeCacheableContent" />
+          <s:enumeration value="imTypeContained" />
+          <s:enumeration value="imTypeSyncPrefs" />
+          <s:enumeration value="imTypeWorkArea2" />
+          <s:enumeration value="imTypeFolderShortcut2" />
+          <s:enumeration value="imTypeDMS2" />
+          <s:enumeration value="imTypeDatabaseStats" />
+          <s:enumeration value="imTypeSessionStats" />
+          <s:enumeration value="imTypeFolderMapping" />
+          <s:enumeration value="imTypeFolderMappings" />
+          <s:enumeration value="imTypeFilingRequest" />
+          <s:enumeration value="imTypeFilingRequests" />
+          <s:enumeration value="imTypeArtifact" />
+          <s:enumeration value="imTypeEMFilingRequest" />
+          <s:enumeration value="imTypeEMFilingRequests" />
+          <s:enumeration value="imTypeEMFolderMapping" />
+          <s:enumeration value="imTypeEMFolderMappings" />
+          <s:enumeration value="imTypeGOBSResult" />
+          <s:enumeration value="imTypeDatabaseMeta" />
+          <s:enumeration value="imTypeMetaDocumentShortcut" />
+          <s:enumeration value="imTypeMetaDocumentShortcuts" />
+          <s:enumeration value="imTypeMetaDocument" />
+          <s:enumeration value="imTypeMetaTuple" />
+          <s:enumeration value="imTypeMetaTuples" />
+          <s:enumeration value="imTypeSelectedAttributes" />
+          <s:enumeration value="imTypeServerProperty" />
+          <s:enumeration value="imTypeServerProperties" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="CreateFoldersResult" type="tns:CreateFoldersOutput" />
+      <s:complexType name="CreateFoldersOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Folders" type="tns:ArrayOfDocumentFolder" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFolders" type="tns:GetFoldersInput" />
+      <s:complexType name="GetFoldersInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectIDs" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFoldersResult" type="tns:GetFoldersOutput" />
+      <s:complexType name="GetFoldersOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Folders" type="tns:ArrayOfDocumentFolder" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFolderContents" type="tns:GetFolderContentsInput" />
+      <s:complexType name="GetFolderContentsInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutputProfile" type="tns:ArrayOfImProfileAttributeID" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFolderContentsResult" type="tns:GetFolderContentsOutput" />
+      <s:complexType name="GetFolderContentsOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Documents" type="tns:ArrayOfDocument" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSubFolders" type="tns:GetSubFoldersInput" />
+      <s:complexType name="GetSubFoldersInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSubFoldersResult" type="tns:GetSubFoldersOutput" />
+      <s:complexType name="GetSubFoldersOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Folders" type="tns:ArrayOfDocumentFolder" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetFoldersProperties" type="tns:SetFoldersPropertiesInput" />
+      <s:complexType name="SetFoldersPropertiesInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Folders" type="tns:ArrayOfDocumentFolder" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetFoldersPropertiesResult" type="tns:SetFoldersPropertiesOutput" />
+      <s:complexType name="SetFoldersPropertiesOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Folders" type="tns:ArrayOfDocumentFolder" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateCustomAttributes" type="tns:CreateCustomAttributesInput" />
+      <s:complexType name="CreateCustomAttributesInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomAttributes" type="tns:ArrayOfCustomAttribute" />
+          <s:element minOccurs="0" maxOccurs="1" name="Database" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCustomAttribute">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CustomAttribute" nillable="true" type="tns:CustomAttribute" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomAttribute">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AttributeID" type="tns:imProfileAttributeID" />
+          <s:element minOccurs="0" maxOccurs="1" name="Alias" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParentAlias" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Enabled" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateCustomAttributesResult" type="tns:CreateCustomAttributesOutput" />
+      <s:complexType name="CreateCustomAttributesOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCustomAttributes" type="tns:GetCustomAttributesInput" />
+      <s:complexType name="GetCustomAttributesInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SearchCriterion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SearchType" type="tns:imSearchAttributeType" />
+          <s:element minOccurs="1" maxOccurs="1" name="CustomAttributeID" type="tns:imProfileAttributeID" />
+          <s:element minOccurs="0" maxOccurs="1" name="Database" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="imSearchAttributeType">
+        <s:restriction base="s:string">
+          <s:enumeration value="imSearchID" />
+          <s:enumeration value="imSearchFullName" />
+          <s:enumeration value="imSearchBoth" />
+          <s:enumeration value="imSearchExactMatch" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetCustomAttributesResult" type="tns:GetCustomAttributesOutput" />
+      <s:complexType name="GetCustomAttributesOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomAttributes" type="tns:ArrayOfCustomAttribute" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateWorkspaces" type="tns:CreateWorkspacesInput" />
+      <s:complexType name="CreateWorkspacesInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Workspaces" type="tns:ArrayOfNewWorkspace" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationDatabase" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutputProfile" type="tns:ArrayOfImProfileAttributeID" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNewWorkspace">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NewWorkspace" nillable="true" type="tns:NewWorkspace" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NewWorkspace">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Workspace">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Notification" type="tns:Notification" />
+              <s:element minOccurs="0" maxOccurs="1" name="TemplateID" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Notification">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Recipients" type="tns:ArrayOfRecipient" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRecipient">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Recipient" nillable="true" type="tns:Recipient" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Recipient">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="tns:AclType" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateWorkspacesResult" type="tns:CreateWorkspacesOutput" />
+      <s:complexType name="CreateWorkspacesOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Workspaces" type="tns:ArrayOfWorkspace" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetObjects" type="tns:GetObjectsInput" />
+      <s:complexType name="GetObjectsInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectIDs" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutputProfile" type="tns:ArrayOfImProfileAttributeID" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetObjectsResult" type="tns:GetObjectsOutput" />
+      <s:complexType name="GetObjectsOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="WSObjects" type="tns:ArrayOfWSObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWSObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WSObject" nillable="true" type="tns:WSObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WSObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailPrefix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParentID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Database" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Profile" type="tns:ArrayOfProfileItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="Security" type="tns:ObjectSecurity" />
+          <s:element minOccurs="0" maxOccurs="1" name="History" type="tns:ArrayOfHistoryItem" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRootLevelFolder" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubFolders" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contents" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomProperties" type="tns:ArrayOfCustomProperty" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalProperties" type="tns:ArrayOfAdditionalProperty" />
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="tns:imObjectType" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FolderID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="nrtid" type="s:string" />
+      <s:element name="historyEventStr" type="s:string" />
+      <s:element name="comment" type="s:string" />
+      <s:element name="strAppName" type="s:string" />
+      <s:element name="AddHistoryResult" type="s:boolean" />
+      <s:element name="input" type="tns:DocumentClassInput" />
+      <s:complexType name="DocumentClassInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Databases" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="SearchTerm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Parent" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SearchDocumentClassesResult" type="tns:DocumentClassOutput" />
+      <s:complexType name="DocumentClassOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentClasses" type="tns:ArrayOfDocumentClass" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDocumentClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DocumentClass" nillable="true" type="tns:DocumentClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DocumentClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Database" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubClassRequired" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="RequiredFields" type="tns:ArrayOfImProfileAttributeID" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SearchDocumentSubClassesResult" type="tns:DocumentClassOutput" />
+      <s:element name="versionInput" type="tns:DocumentVersionInput" />
+      <s:complexType name="DocumentVersionInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutputProfile" type="tns:ArrayOfImProfileAttributeID" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutputMask" type="tns:OutputMask" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVersionsResult" type="tns:DocumentVersionOutput" />
+      <s:complexType name="DocumentVersionOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Versions" type="tns:ArrayOfDocumentVersion" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDocumentVersion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DocumentVersion" nillable="true" type="tns:DocumentVersion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DocumentVersion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Document" type="tns:Document" />
+          <s:element minOccurs="1" maxOccurs="1" name="Version" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="dbName" type="s:string" />
+      <s:element name="GetDefaultAttributesResult" type="tns:GetDefaultAttributesOutput" />
+      <s:complexType name="GetDefaultAttributesOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Attributes" type="tns:ArrayOfImProfileAttributeID" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="customInput" type="tns:GetCustomAttributesInput" />
+      <s:element name="GetLookupValuesResult" type="tns:GetCustomAttributesOutput" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SearchDocumentsSoapIn">
+    <wsdl:part name="SearchDocuments" element="tns:SearchDocuments" />
+  </wsdl:message>
+  <wsdl:message name="SearchDocumentsSoapOut">
+    <wsdl:part name="SearchDocumentsResult" element="tns:SearchDocumentsResult" />
+  </wsdl:message>
+  <wsdl:message name="CreateDocumentsSoapIn">
+    <wsdl:part name="CreateDocuments" element="tns:CreateDocuments" />
+  </wsdl:message>
+  <wsdl:message name="CreateDocumentsSoapOut">
+    <wsdl:part name="CreateDocumentsResult" element="tns:CreateDocumentsResult" />
+  </wsdl:message>
+  <wsdl:message name="UploadDocumentsSoapIn">
+    <wsdl:part name="UploadDocuments" element="tns:UploadDocuments" />
+  </wsdl:message>
+  <wsdl:message name="UploadDocumentsSoapOut">
+    <wsdl:part name="UploadDocumentsResult" element="tns:UploadDocumentsResult" />
+  </wsdl:message>
+  <wsdl:message name="GetDatabasesSoapIn" />
+  <wsdl:message name="GetDatabasesSoapOut">
+    <wsdl:part name="GetDatabasesResult" element="tns:GetDatabasesResult" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDocumentsSoapIn">
+    <wsdl:part name="DeleteDocuments" element="tns:DeleteDocuments" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDocumentsSoapOut">
+    <wsdl:part name="DeleteDocumentsResult" element="tns:DeleteDocumentsResult" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentsSoapIn">
+    <wsdl:part name="GetDocuments" element="tns:GetDocuments" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentsSoapOut">
+    <wsdl:part name="GetDocumentsResult" element="tns:GetDocumentsResult" />
+  </wsdl:message>
+  <wsdl:message name="SetDocumentsPropertiesSoapIn">
+    <wsdl:part name="SetDocumentsProperties" element="tns:SetDocumentsProperties" />
+  </wsdl:message>
+  <wsdl:message name="SetDocumentsPropertiesSoapOut">
+    <wsdl:part name="SetDocumentsPropertiesResult" element="tns:SetDocumentsPropertiesResult" />
+  </wsdl:message>
+  <wsdl:message name="CheckOutSoapIn">
+    <wsdl:part name="CheckOut" element="tns:CheckOut" />
+  </wsdl:message>
+  <wsdl:message name="CheckOutSoapOut">
+    <wsdl:part name="CheckOutResult" element="tns:CheckOutResult" />
+  </wsdl:message>
+  <wsdl:message name="CheckInReplaceOriginalSoapIn">
+    <wsdl:part name="CheckinReplaceOriginal" element="tns:CheckinReplaceOriginal" />
+  </wsdl:message>
+  <wsdl:message name="CheckInReplaceOriginalSoapOut">
+    <wsdl:part name="CheckInReplaceOriginalResult" element="tns:CheckInReplaceOriginalResult" />
+  </wsdl:message>
+  <wsdl:message name="CheckInUndoSoapIn">
+    <wsdl:part name="CheckinUndo" element="tns:CheckinUndo" />
+  </wsdl:message>
+  <wsdl:message name="CheckInUndoSoapOut">
+    <wsdl:part name="CheckInUndoResult" element="tns:CheckInUndoResult" />
+  </wsdl:message>
+  <wsdl:message name="CheckInNewVersionSoapIn">
+    <wsdl:part name="CheckInNewVersion" element="tns:CheckInNewVersion" />
+  </wsdl:message>
+  <wsdl:message name="CheckInNewVersionSoapOut">
+    <wsdl:part name="CheckInNewVersionResult" element="tns:CheckInNewVersionResult" />
+  </wsdl:message>
+  <wsdl:message name="CheckInNewDocumentSoapIn">
+    <wsdl:part name="CheckInNewDocument" element="tns:CheckInNewDocument" />
+  </wsdl:message>
+  <wsdl:message name="CheckInNewDocumentSoapOut">
+    <wsdl:part name="CheckInNewDocumentResult" element="tns:CheckInNewDocumentResult" />
+  </wsdl:message>
+  <wsdl:message name="SearchWorkspacesSoapIn">
+    <wsdl:part name="SearchWorkspacesInput" element="tns:SearchWorkspacesInput" />
+  </wsdl:message>
+  <wsdl:message name="SearchWorkspacesSoapOut">
+    <wsdl:part name="SearchWorkspacesResult" element="tns:SearchWorkspacesResult" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkspacesSoapIn">
+    <wsdl:part name="GetWorkspaces" element="tns:GetWorkspaces" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkspacesSoapOut">
+    <wsdl:part name="GetWorkspacesResult" element="tns:GetWorkspacesResult" />
+  </wsdl:message>
+  <wsdl:message name="SetWorkspacesPropertiesSoapIn">
+    <wsdl:part name="SetWorkspacesProperties" element="tns:SetWorkspacesProperties" />
+  </wsdl:message>
+  <wsdl:message name="SetWorkspacesPropertiesSoapOut">
+    <wsdl:part name="SetWorkspacesPropertiesResult" element="tns:SetWorkspacesPropertiesResult" />
+  </wsdl:message>
+  <wsdl:message name="CreateFoldersSoapIn">
+    <wsdl:part name="CreateFolders" element="tns:CreateFolders" />
+  </wsdl:message>
+  <wsdl:message name="CreateFoldersSoapOut">
+    <wsdl:part name="CreateFoldersResult" element="tns:CreateFoldersResult" />
+  </wsdl:message>
+  <wsdl:message name="GetFoldersSoapIn">
+    <wsdl:part name="GetFolders" element="tns:GetFolders" />
+  </wsdl:message>
+  <wsdl:message name="GetFoldersSoapOut">
+    <wsdl:part name="GetFoldersResult" element="tns:GetFoldersResult" />
+  </wsdl:message>
+  <wsdl:message name="GetFolderContentsSoapIn">
+    <wsdl:part name="GetFolderContents" element="tns:GetFolderContents" />
+  </wsdl:message>
+  <wsdl:message name="GetFolderContentsSoapOut">
+    <wsdl:part name="GetFolderContentsResult" element="tns:GetFolderContentsResult" />
+  </wsdl:message>
+  <wsdl:message name="GetSubFoldersSoapIn">
+    <wsdl:part name="GetSubFolders" element="tns:GetSubFolders" />
+  </wsdl:message>
+  <wsdl:message name="GetSubFoldersSoapOut">
+    <wsdl:part name="GetSubFoldersResult" element="tns:GetSubFoldersResult" />
+  </wsdl:message>
+  <wsdl:message name="SetFoldersPropertiesSoapIn">
+    <wsdl:part name="SetFoldersProperties" element="tns:SetFoldersProperties" />
+  </wsdl:message>
+  <wsdl:message name="SetFoldersPropertiesSoapOut">
+    <wsdl:part name="SetFoldersPropertiesResult" element="tns:SetFoldersPropertiesResult" />
+  </wsdl:message>
+  <wsdl:message name="CreateCustomAttributesSoapIn">
+    <wsdl:part name="CreateCustomAttributes" element="tns:CreateCustomAttributes" />
+  </wsdl:message>
+  <wsdl:message name="CreateCustomAttributesSoapOut">
+    <wsdl:part name="CreateCustomAttributesResult" element="tns:CreateCustomAttributesResult" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomAttributesSoapIn">
+    <wsdl:part name="GetCustomAttributes" element="tns:GetCustomAttributes" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomAttributesSoapOut">
+    <wsdl:part name="GetCustomAttributesResult" element="tns:GetCustomAttributesResult" />
+  </wsdl:message>
+  <wsdl:message name="CreateWorkspacesSoapIn">
+    <wsdl:part name="CreateWorkspaces" element="tns:CreateWorkspaces" />
+  </wsdl:message>
+  <wsdl:message name="CreateWorkspacesSoapOut">
+    <wsdl:part name="CreateWorkspacesResult" element="tns:CreateWorkspacesResult" />
+  </wsdl:message>
+  <wsdl:message name="GetObjectsSoapIn">
+    <wsdl:part name="GetObjects" element="tns:GetObjects" />
+  </wsdl:message>
+  <wsdl:message name="GetObjectsSoapOut">
+    <wsdl:part name="GetObjectsResult" element="tns:GetObjectsResult" />
+  </wsdl:message>
+  <wsdl:message name="AddHistorySoapIn">
+    <wsdl:part name="nrtid" element="tns:nrtid" />
+    <wsdl:part name="historyEventStr" element="tns:historyEventStr" />
+    <wsdl:part name="comment" element="tns:comment" />
+    <wsdl:part name="strAppName" element="tns:strAppName" />
+  </wsdl:message>
+  <wsdl:message name="AddHistorySoapOut">
+    <wsdl:part name="AddHistoryResult" element="tns:AddHistoryResult" />
+  </wsdl:message>
+  <wsdl:message name="SearchDocumentClassesSoapIn">
+    <wsdl:part name="input" element="tns:input" />
+  </wsdl:message>
+  <wsdl:message name="SearchDocumentClassesSoapOut">
+    <wsdl:part name="SearchDocumentClassesResult" element="tns:SearchDocumentClassesResult" />
+  </wsdl:message>
+  <wsdl:message name="SearchDocumentSubClassesSoapIn">
+    <wsdl:part name="input" element="tns:input" />
+  </wsdl:message>
+  <wsdl:message name="SearchDocumentSubClassesSoapOut">
+    <wsdl:part name="SearchDocumentSubClassesResult" element="tns:SearchDocumentSubClassesResult" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionsSoapIn">
+    <wsdl:part name="versionInput" element="tns:versionInput" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionsSoapOut">
+    <wsdl:part name="GetVersionsResult" element="tns:GetVersionsResult" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultAttributesSoapIn">
+    <wsdl:part name="dbName" element="tns:dbName" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultAttributesSoapOut">
+    <wsdl:part name="GetDefaultAttributesResult" element="tns:GetDefaultAttributesResult" />
+  </wsdl:message>
+  <wsdl:message name="GetLookupValuesSoapIn">
+    <wsdl:part name="customInput" element="tns:customInput" />
+  </wsdl:message>
+  <wsdl:message name="GetLookupValuesSoapOut">
+    <wsdl:part name="GetLookupValuesResult" element="tns:GetLookupValuesResult" />
+  </wsdl:message>
+  <wsdl:portType name="IWOVServicesSoap">
+    <wsdl:operation name="SearchDocuments">
+      <wsdl:input message="tns:SearchDocumentsSoapIn" />
+      <wsdl:output message="tns:SearchDocumentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDocuments">
+      <wsdl:input message="tns:CreateDocumentsSoapIn" />
+      <wsdl:output message="tns:CreateDocumentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocuments">
+      <wsdl:input message="tns:UploadDocumentsSoapIn" />
+      <wsdl:output message="tns:UploadDocumentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatabases">
+      <wsdl:input message="tns:GetDatabasesSoapIn" />
+      <wsdl:output message="tns:GetDatabasesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocuments">
+      <wsdl:input message="tns:DeleteDocumentsSoapIn" />
+      <wsdl:output message="tns:DeleteDocumentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocuments">
+      <wsdl:input message="tns:GetDocumentsSoapIn" />
+      <wsdl:output message="tns:GetDocumentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDocumentsProperties">
+      <wsdl:input message="tns:SetDocumentsPropertiesSoapIn" />
+      <wsdl:output message="tns:SetDocumentsPropertiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOut">
+      <wsdl:input message="tns:CheckOutSoapIn" />
+      <wsdl:output message="tns:CheckOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInReplaceOriginal">
+      <wsdl:input message="tns:CheckInReplaceOriginalSoapIn" />
+      <wsdl:output message="tns:CheckInReplaceOriginalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInUndo">
+      <wsdl:input message="tns:CheckInUndoSoapIn" />
+      <wsdl:output message="tns:CheckInUndoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInNewVersion">
+      <wsdl:input message="tns:CheckInNewVersionSoapIn" />
+      <wsdl:output message="tns:CheckInNewVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInNewDocument">
+      <wsdl:input message="tns:CheckInNewDocumentSoapIn" />
+      <wsdl:output message="tns:CheckInNewDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchWorkspaces">
+      <wsdl:input message="tns:SearchWorkspacesSoapIn" />
+      <wsdl:output message="tns:SearchWorkspacesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkspaces">
+      <wsdl:input message="tns:GetWorkspacesSoapIn" />
+      <wsdl:output message="tns:GetWorkspacesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetWorkspacesProperties">
+      <wsdl:input message="tns:SetWorkspacesPropertiesSoapIn" />
+      <wsdl:output message="tns:SetWorkspacesPropertiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFolders">
+      <wsdl:input message="tns:CreateFoldersSoapIn" />
+      <wsdl:output message="tns:CreateFoldersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFolders">
+      <wsdl:input message="tns:GetFoldersSoapIn" />
+      <wsdl:output message="tns:GetFoldersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderContents">
+      <wsdl:input message="tns:GetFolderContentsSoapIn" />
+      <wsdl:output message="tns:GetFolderContentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubFolders">
+      <wsdl:input message="tns:GetSubFoldersSoapIn" />
+      <wsdl:output message="tns:GetSubFoldersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFoldersProperties">
+      <wsdl:input message="tns:SetFoldersPropertiesSoapIn" />
+      <wsdl:output message="tns:SetFoldersPropertiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomAttributes">
+      <wsdl:input message="tns:CreateCustomAttributesSoapIn" />
+      <wsdl:output message="tns:CreateCustomAttributesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomAttributes">
+      <wsdl:input message="tns:GetCustomAttributesSoapIn" />
+      <wsdl:output message="tns:GetCustomAttributesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateWorkspaces">
+      <wsdl:input message="tns:CreateWorkspacesSoapIn" />
+      <wsdl:output message="tns:CreateWorkspacesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjects">
+      <wsdl:input message="tns:GetObjectsSoapIn" />
+      <wsdl:output message="tns:GetObjectsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddHistory">
+      <wsdl:input message="tns:AddHistorySoapIn" />
+      <wsdl:output message="tns:AddHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDocumentClasses">
+      <wsdl:input message="tns:SearchDocumentClassesSoapIn" />
+      <wsdl:output message="tns:SearchDocumentClassesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDocumentSubClasses">
+      <wsdl:input message="tns:SearchDocumentSubClassesSoapIn" />
+      <wsdl:output message="tns:SearchDocumentSubClassesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersions">
+      <wsdl:input message="tns:GetVersionsSoapIn" />
+      <wsdl:output message="tns:GetVersionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultAttributes">
+      <wsdl:input message="tns:GetDefaultAttributesSoapIn" />
+      <wsdl:output message="tns:GetDefaultAttributesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLookupValues">
+      <wsdl:input message="tns:GetLookupValuesSoapIn" />
+      <wsdl:output message="tns:GetLookupValuesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IWOVServicesSoap" type="tns:IWOVServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchDocuments">
+      <soap:operation soapAction="http://worksite.imanage.com/SearchDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDocuments">
+      <soap:operation soapAction="http://worksite.imanage.com/CreateDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocuments">
+      <soap:operation soapAction="http://worksite.imanage.com/UploadDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatabases">
+      <soap:operation soapAction="http://worksite.imanage.com/GetDatabases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocuments">
+      <soap:operation soapAction="http://worksite.imanage.com/DeleteDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocuments">
+      <soap:operation soapAction="http://worksite.imanage.com/GetDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDocumentsProperties">
+      <soap:operation soapAction="http://worksite.imanage.com/SetDocumentsProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOut">
+      <soap:operation soapAction="http://worksite.imanage.com/CheckOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInReplaceOriginal">
+      <soap:operation soapAction="http://worksite.imanage.com/CheckInReplaceOriginal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInUndo">
+      <soap:operation soapAction="http://worksite.imanage.com/CheckInUndo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInNewVersion">
+      <soap:operation soapAction="http://worksite.imanage.com/CheckInNewVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInNewDocument">
+      <soap:operation soapAction="http://worksite.imanage.com/CheckInNewDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchWorkspaces">
+      <soap:operation soapAction="http://worksite.imanage.com/SearchWorkspaces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkspaces">
+      <soap:operation soapAction="http://worksite.imanage.com/GetWorkspaces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetWorkspacesProperties">
+      <soap:operation soapAction="http://worksite.imanage.com/SetWorkspacesProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFolders">
+      <soap:operation soapAction="http://worksite.imanage.com/CreateFolders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFolders">
+      <soap:operation soapAction="http://worksite.imanage.com/GetFolders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderContents">
+      <soap:operation soapAction="http://worksite.imanage.com/GetFolderContents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubFolders">
+      <soap:operation soapAction="http://worksite.imanage.com/GetSubFolders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFoldersProperties">
+      <soap:operation soapAction="http://worksite.imanage.com/SetFoldersProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomAttributes">
+      <soap:operation soapAction="http://worksite.imanage.com/CreateCustomAttributes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomAttributes">
+      <soap:operation soapAction="http://worksite.imanage.com/GetCustomAttributes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateWorkspaces">
+      <soap:operation soapAction="http://worksite.imanage.com/CreateWorkspaces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjects">
+      <soap:operation soapAction="http://worksite.imanage.com/GetObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHistory">
+      <soap:operation soapAction="http://worksite.imanage.com/AddHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDocumentClasses">
+      <soap:operation soapAction="http://worksite.imanage.com/SearchDocumentClasses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDocumentSubClasses">
+      <soap:operation soapAction="http://worksite.imanage.com/SearchDocumentSubClasses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersions">
+      <soap:operation soapAction="http://worksite.imanage.com/GetVersions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultAttributes">
+      <soap:operation soapAction="http://worksite.imanage.com/GetDefaultAttributes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLookupValues">
+      <soap:operation soapAction="http://worksite.imanage.com/GetLookupValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IWOVServicesSoap12" type="tns:IWOVServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchDocuments">
+      <soap12:operation soapAction="http://worksite.imanage.com/SearchDocuments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDocuments">
+      <soap12:operation soapAction="http://worksite.imanage.com/CreateDocuments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocuments">
+      <soap12:operation soapAction="http://worksite.imanage.com/UploadDocuments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatabases">
+      <soap12:operation soapAction="http://worksite.imanage.com/GetDatabases" style="document" soapActionRequired="true" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocuments">
+      <soap12:operation soapAction="http://worksite.imanage.com/DeleteDocuments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocuments">
+      <soap12:operation soapAction="http://worksite.imanage.com/GetDocuments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDocumentsProperties">
+      <soap12:operation soapAction="http://worksite.imanage.com/SetDocumentsProperties" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOut">
+      <soap12:operation soapAction="http://worksite.imanage.com/CheckOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInReplaceOriginal">
+      <soap12:operation soapAction="http://worksite.imanage.com/CheckInReplaceOriginal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInUndo">
+      <soap12:operation soapAction="http://worksite.imanage.com/CheckInUndo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInNewVersion">
+      <soap12:operation soapAction="http://worksite.imanage.com/CheckInNewVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInNewDocument">
+      <soap12:operation soapAction="http://worksite.imanage.com/CheckInNewDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchWorkspaces">
+      <soap12:operation soapAction="http://worksite.imanage.com/SearchWorkspaces" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkspaces">
+      <soap12:operation soapAction="http://worksite.imanage.com/GetWorkspaces" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetWorkspacesProperties">
+      <soap12:operation soapAction="http://worksite.imanage.com/SetWorkspacesProperties" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFolders">
+      <soap12:operation soapAction="http://worksite.imanage.com/CreateFolders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFolders">
+      <soap12:operation soapAction="http://worksite.imanage.com/GetFolders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderContents">
+      <soap12:operation soapAction="http://worksite.imanage.com/GetFolderContents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubFolders">
+      <soap12:operation soapAction="http://worksite.imanage.com/GetSubFolders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFoldersProperties">
+      <soap12:operation soapAction="http://worksite.imanage.com/SetFoldersProperties" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomAttributes">
+      <soap12:operation soapAction="http://worksite.imanage.com/CreateCustomAttributes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomAttributes">
+      <soap12:operation soapAction="http://worksite.imanage.com/GetCustomAttributes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateWorkspaces">
+      <soap12:operation soapAction="http://worksite.imanage.com/CreateWorkspaces" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjects">
+      <soap12:operation soapAction="http://worksite.imanage.com/GetObjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHistory">
+      <soap12:operation soapAction="http://worksite.imanage.com/AddHistory" style="document" soapActionRequired="true" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDocumentClasses">
+      <soap12:operation soapAction="http://worksite.imanage.com/SearchDocumentClasses" style="document" soapActionRequired="true" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDocumentSubClasses">
+      <soap12:operation soapAction="http://worksite.imanage.com/SearchDocumentSubClasses" style="document" soapActionRequired="true" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersions">
+      <soap12:operation soapAction="http://worksite.imanage.com/GetVersions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultAttributes">
+      <soap12:operation soapAction="http://worksite.imanage.com/GetDefaultAttributes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLookupValues">
+      <soap12:operation soapAction="http://worksite.imanage.com/GetLookupValues" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IWOVServices">
+    <wsdl:port name="IWOVServicesSoap" binding="tns:IWOVServicesSoap">
+      <soap:address location="http://gsoimanage2/worksite/services/IWOVServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IWOVServicesSoap12" binding="tns:IWOVServicesSoap12">
+      <soap12:address location="http://gsoimanage2/worksite/services/IWOVServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

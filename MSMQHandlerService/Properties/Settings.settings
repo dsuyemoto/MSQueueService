@@ -1,0 +1,245 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MSMQHandlerService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EwsFileSavePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\MSMQHandlerService\Ews</Value>
+    </Setting>
+    <Setting Name="CicServerName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CICServer</Value>
+    </Setting>
+    <Setting Name="CicUsername" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">username</Value>
+    </Setting>
+    <Setting Name="CicPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">password</Value>
+    </Setting>
+    <Setting Name="CicPeriodicity" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="EwsPeriodicity" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ImanagePeriodicity" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ServiceNowPeriodicity" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="LogDirectory" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\MSMQHandlerService\Logs</Value>
+    </Setting>
+    <Setting Name="LogLevel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Debug</Value>
+    </Setting>
+    <Setting Name="CicRequestQueueName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Cic</Value>
+    </Setting>
+    <Setting Name="CicResponseQueueName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CicResponse</Value>
+    </Setting>
+    <Setting Name="CicMaxMessageRetries" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="EwsRequestQueueName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Ews</Value>
+    </Setting>
+    <Setting Name="EwsResponseQueueName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EwsResponse</Value>
+    </Setting>
+    <Setting Name="ImanageRequestQueueName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Imanage</Value>
+    </Setting>
+    <Setting Name="ImanageResponseQueueName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ImanageResponse</Value>
+    </Setting>
+    <Setting Name="ServiceNowRequestQueueName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ServiceNow</Value>
+    </Setting>
+    <Setting Name="ServiceNowResponseQueueName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ServiceNowResponse</Value>
+    </Setting>
+    <Setting Name="EwsMaxMessageRetries" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="ImanageMaxMessageRetries" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="ServiceNowMaxMessageRetries" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="CicStopHandlerOnError" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="EwsStopHandlerOnError" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ImanageStopHandlerOnError" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ServiceNowStopHandlerOnError" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="EwsRetryIntervalMilliseconds" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+    <Setting Name="EwsDefaultMaxWaitTimeSeconds" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="EwsTraceFolderPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\MSMQHandlerService\Logs\EwsTrace</Value>
+    </Setting>
+    <Setting Name="EwsTraceEnabled" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CicQueueServiceMessageExpiration" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">08:00:00</Value>
+    </Setting>
+    <Setting Name="CicQueueServiceReceiveTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:05:00</Value>
+    </Setting>
+    <Setting Name="CicQueueServiceMaxRetries" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="ServiceNowQueueServiceMessageExpiration" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">08:00:00</Value>
+    </Setting>
+    <Setting Name="ServiceNowQueueServiceReceiveTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:05:00</Value>
+    </Setting>
+    <Setting Name="ServiceNowQueueServiceMaxRetries" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="ImanageQueueServiceMessageExpiration" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">08:00:00</Value>
+    </Setting>
+    <Setting Name="ImanageQueueServiceReceiveTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:05:00</Value>
+    </Setting>
+    <Setting Name="ImanageQueueServiceMaxRetries" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="EwsQueueServiceMessageExpiration" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">08:00:00</Value>
+    </Setting>
+    <Setting Name="EwsQueueServiceResponseTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:05:00</Value>
+    </Setting>
+    <Setting Name="EwsQueueServiceMaxRetries" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="CicQueueServiceStartupTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:00:10</Value>
+    </Setting>
+    <Setting Name="CicQueueServiceShutdownTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:00:10</Value>
+    </Setting>
+    <Setting Name="ServiceNowQueueServiceStartupTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:00:10</Value>
+    </Setting>
+    <Setting Name="ServiceNowQueueServiceShutdownTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:00:10</Value>
+    </Setting>
+    <Setting Name="ImanageQueueServiceStartupTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:00:10</Value>
+    </Setting>
+    <Setting Name="ImanageQueueServiceShutdownTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:00:10</Value>
+    </Setting>
+    <Setting Name="EwsQueueServiceStartupTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:00:10</Value>
+    </Setting>
+    <Setting Name="EwsQueueServiceShutdownTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:00:10</Value>
+    </Setting>
+    <Setting Name="EwsCacheTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:10:00</Value>
+    </Setting>
+    <Setting Name="CicQueueServicePurgeInterval" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ImanageQueueServicePurgeInterval" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ServiceNowQueueServicePurgeInterval" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="EwsQueueServicePurgeTime" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">3.00:00:00</Value>
+    </Setting>
+    <Setting Name="ImanageCacheTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:01:00</Value>
+    </Setting>
+    <Setting Name="ImanageDeclareAsRecord" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="EwsQueueServicePurgeInterval" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CicQueueServicePurgeTime" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">3.00:00:00</Value>
+    </Setting>
+    <Setting Name="ImanageQueueServicePurgeTime" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">3.00:00:00</Value>
+    </Setting>
+    <Setting Name="ServiceNowQueueServicePurgeTime" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">3.00:00:00</Value>
+    </Setting>
+    <Setting Name="ServiceNowPlaceholderName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CacheServiceTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:00:00</Value>
+    </Setting>
+    <Setting Name="ImanageUrlASIADOCS" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://hkdimanweb1.com/Worksite</Value>
+    </Setting>
+    <Setting Name="ImanageUrlEUDOCS" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://mndimanweb1.com/Worksite</Value>
+    </Setting>
+    <Setting Name="ImanageUrlUSDOCS" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://lvdimanweb1.com/Worksite</Value>
+    </Setting>
+    <Setting Name="LogSizeMB" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="InternalLoggingFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\MSMQHandlerService\Logs\InternalLogging\nlog.txt</Value>
+    </Setting>
+    <Setting Name="LogFileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">MSMQHandlerService.txt</Value>
+    </Setting>
+    <Setting Name="ImanageDeclareAsRecordExtensions" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;string&gt;EFX&lt;/string&gt;
+  &lt;string&gt;FORM&lt;/string&gt;
+  &lt;string&gt;VSD&lt;/string&gt;
+  &lt;string&gt;HTML&lt;/string&gt;
+  &lt;string&gt;HTM&lt;/string&gt;
+  &lt;string&gt;MIME&lt;/string&gt;
+  &lt;string&gt;WAV&lt;/string&gt;
+  &lt;string&gt;TIF&lt;/string&gt;
+  &lt;string&gt;PRJ&lt;/string&gt;
+  &lt;string&gt;MPP&lt;/string&gt;
+  &lt;string&gt;EML&lt;/string&gt;
+  &lt;string&gt;MSG&lt;/string&gt;
+  &lt;string&gt;GIF&lt;/string&gt;
+  &lt;string&gt;WDF&lt;/string&gt;
+  &lt;string&gt;URL&lt;/string&gt;
+  &lt;string&gt;NRL&lt;/string&gt;
+  &lt;string&gt;XML&lt;/string&gt;
+  &lt;string&gt;DWF&lt;/string&gt;
+  &lt;string&gt;PNG&lt;/string&gt;
+  &lt;string&gt;JPG&lt;/string&gt;
+  &lt;string&gt;JPEG&lt;/string&gt;
+  &lt;string&gt;BMP&lt;/string&gt;
+  &lt;string&gt;KML&lt;/string&gt;
+  &lt;string&gt;ZIP&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="ApplicationEventId" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10101</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

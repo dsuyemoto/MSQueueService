@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EWS", "EWS.csproj", "{AC1D1FEB-3731-4CEF-BFAA-BD2580D7C292}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EWS.Tests", "..\EWSTests\EWS.Tests.csproj", "{DC4424B7-D860-40A0-9C7D-3AA3CF34BB94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ews.TestApplication", "..\EwsTestApplication\Ews.TestApplication.csproj", "{20042323-B25D-4DDE-AB1E-3F27A12614F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EWS.IntegrationTests", "..\EWS.IntegrationTests\EWS.IntegrationTests.csproj", "{64B0F65F-481F-4F28-BBCA-DF67C9D15A9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC1D1FEB-3731-4CEF-BFAA-BD2580D7C292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC1D1FEB-3731-4CEF-BFAA-BD2580D7C292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC1D1FEB-3731-4CEF-BFAA-BD2580D7C292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC1D1FEB-3731-4CEF-BFAA-BD2580D7C292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC4424B7-D860-40A0-9C7D-3AA3CF34BB94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC4424B7-D860-40A0-9C7D-3AA3CF34BB94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC4424B7-D860-40A0-9C7D-3AA3CF34BB94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC4424B7-D860-40A0-9C7D-3AA3CF34BB94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20042323-B25D-4DDE-AB1E-3F27A12614F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20042323-B25D-4DDE-AB1E-3F27A12614F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20042323-B25D-4DDE-AB1E-3F27A12614F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20042323-B25D-4DDE-AB1E-3F27A12614F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64B0F65F-481F-4F28-BBCA-DF67C9D15A9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64B0F65F-481F-4F28-BBCA-DF67C9D15A9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64B0F65F-481F-4F28-BBCA-DF67C9D15A9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64B0F65F-481F-4F28-BBCA-DF67C9D15A9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.lw.com/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = EWS.csproj
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = ..\\EWSTests\\EWS.Tests.csproj
+		SccProjectName2 = ../EWSTests
+		SccLocalPath2 = ..\\EWSTests
+		SccProjectUniqueName3 = ..\\EwsTestApplication\\Ews.TestApplication.csproj
+		SccProjectName3 = ../EwsTestApplication
+		SccLocalPath3 = ..\\EwsTestApplication
+		SccProjectUniqueName4 = ..\\EWS.IntegrationTests\\EWS.IntegrationTests.csproj
+		SccProjectName4 = ../EWS.IntegrationTests
+		SccLocalPath4 = ..\\EWS.IntegrationTests
+	EndGlobalSection
+EndGlobal

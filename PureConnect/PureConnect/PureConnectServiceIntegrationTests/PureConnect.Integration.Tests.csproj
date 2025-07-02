@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PureConnect\PureConnect.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ININ.ICWS.Managed">
+      <HintPath>..\PureConnect\ReferenceAssembly\ININ.ICWS.Managed.dll</HintPath>
+    </Reference>
+    <Reference Include="ININ.WebServices.Core">
+      <HintPath>..\PureConnect\ReferenceAssembly\ININ.WebServices.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <!-- Create a variable named FileToSign which indicates the correct output path (bin/Debug or bin/Release) 
+       and file name (lw4.project.dll or lw4.project.exe) -->
+  <PropertyGroup Condition="'$(OutputType)'=='Library'">
+    <FileToSign Condition="'$(FileToSign)' == ''">$(OutputPath)$(AssemblyName).dll</FileToSign>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(OutputType)'=='Exe'">
+    <FileToSign Condition="'$(FileToSign)' == ''">$(OutputPath)$(AssemblyName).exe</FileToSign>
+  </PropertyGroup>
+  <!-- Execute the signtool command with the appropriate arguments after the build -->
+  <Target Name="AfterBuild">
+    <Message Importance="high" Text="OutputType = $(OutputType), FileToSign = $(FileToSign)" />
+    <Exec Command="S:\TFS\Certs\signtool.exe sign /f S:\TFS\Certs\LWCode.pfx /p iisonntviaie /v &quot;$(FileToSign)&quot;" />
+  </Target>
+</Project>
