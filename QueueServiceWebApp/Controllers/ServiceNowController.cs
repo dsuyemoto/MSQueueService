@@ -29,8 +29,14 @@ namespace QueueServiceWebApp.Controllers
                             Properties.Settings.Default.LogFileSizeMB,
                             "ServiceNowController") }
                     ));
-
-            _queueServiceServiceNow = new QueueServiceServiceNow(QueueType.MSMQ, true, _logger) ;
+            try
+            {
+                _queueServiceServiceNow = new QueueServiceServiceNow(QueueType.MSMQ, true, _logger);
+            } 
+            catch (Exception ex)
+            {
+                _logger.Fatal(ex);
+            }
         }
 
         public ServiceNowController(IQueueServiceServiceNow queueServiceServiceNow)

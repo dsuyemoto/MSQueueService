@@ -14,6 +14,15 @@ namespace LoggerHelper
         {
             
         }
+        public override void Fatal(
+            Exception exception,
+            string context = "",
+            [CallerMemberName] string memberName = "",
+            [CallerFilePath] string filePath = "",
+            [CallerLineNumber] int lineNumber = 0)
+        {
+
+        }
         public override void Error(
             string message,
             string context = "",

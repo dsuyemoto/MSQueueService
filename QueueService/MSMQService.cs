@@ -80,45 +80,51 @@ namespace QueueService
                     new MsmqQueuePermission(ADMINISTRATORS, MsmqMessageQueue.MsmqRights.FullControl),
                     new MsmqQueuePermission(LOCALSERVICE, MsmqMessageQueue.MsmqRights.FullControl)
                 };
-            _requestQueue = new MsmqMessageQueue(
-                RequestQueueName, 
-                requestFormatterTypes,
-                queuePermissions, 
-                msmqServerName);
-            _responseQueue = new MsmqMessageQueue(
-                ResponseQueueName, 
-                responseFormatterTypes, 
-                queuePermissions, 
-                msmqServerName);
-            _failedQueue = new MsmqMessageQueue(
-                FailedQueueName, 
-                requestFormatterTypes,
-                queuePermissions, 
-                msmqServerName);
-            _requestJournalQueue = new MsmqMessageQueue(
-                RequestQueueName + JOURNALQUEUE, 
-                requestFormatterTypes,
-                queuePermissions,
-                msmqServerName,
-                true);
-            _responseJournalQueue = new MsmqMessageQueue(
-                ResponseQueueName + JOURNALQUEUE, 
-                responseFormatterTypes, 
-                queuePermissions, 
-                msmqServerName,
-                true);
-            _failedJournalQueue = new MsmqMessageQueue(
-                FailedQueueName + JOURNALQUEUE,
-                requestFormatterTypes,
-                queuePermissions,
-                msmqServerName,
-                true);
-
-            _logger.Debug(
-                "Initializing requestqueue: " + RequestQueueName +
-                " responsequeue: " + ResponseQueueName +
-                " failedqueue: " + FailedQueueName +
-                " servername: " + msmqServerName);
+            try
+            {
+                _requestQueue = new MsmqMessageQueue(
+                    RequestQueueName,
+                    requestFormatterTypes,
+                    queuePermissions,
+                    msmqServerName);
+                _responseQueue = new MsmqMessageQueue(
+                    ResponseQueueName,
+                    responseFormatterTypes,
+                    queuePermissions,
+                    msmqServerName);
+                _failedQueue = new MsmqMessageQueue(
+                    FailedQueueName,
+                    requestFormatterTypes,
+                    queuePermissions,
+                    msmqServerName);
+                _requestJournalQueue = new MsmqMessageQueue(
+                    RequestQueueName + JOURNALQUEUE,
+                    requestFormatterTypes,
+                    queuePermissions,
+                    msmqServerName,
+                    true);
+                _responseJournalQueue = new MsmqMessageQueue(
+                    ResponseQueueName + JOURNALQUEUE,
+                    responseFormatterTypes,
+                    queuePermissions,
+                    msmqServerName,
+                    true);
+                _failedJournalQueue = new MsmqMessageQueue(
+                    FailedQueueName + JOURNALQUEUE,
+                    requestFormatterTypes,
+                    queuePermissions,
+                    msmqServerName,
+                    true);
+                _logger.Debug(
+                    "Initializing requestqueue: " + RequestQueueName +
+                    " responsequeue: " + ResponseQueueName +
+                    " failedqueue: " + FailedQueueName +
+                    " servername: " + msmqServerName);  
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex);
+            }  
         }
 
         public async Task<string> RequestAsync(MsmqMessage messageWrapper, CancellationToken token)
@@ -359,9 +365,9 @@ namespace QueueService
             {
                 _logger.Error(mqe.Message);
             }
-            catch (Exception ex)
+            catch
             {
-                _logger.Error(ex);
+                throw;
             }
         }
 

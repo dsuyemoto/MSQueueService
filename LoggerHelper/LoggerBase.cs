@@ -16,6 +16,12 @@ namespace LoggerHelper
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string filePath = "",
             [CallerLineNumber] int lineNumber = 0);
+        public abstract void Fatal(
+            Exception exception,
+            string context = "",
+            [CallerMemberName] string memberName = "",
+            [CallerFilePath] string filePath = "",
+            [CallerLineNumber] int lineNumber = 0);
         public abstract void Error(
             string message,
             string context = "",

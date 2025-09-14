@@ -40,6 +40,16 @@ namespace LoggerHelper
             Execute((m) => _nlog.Fatal(m), FormatMessage(_appDomain, message, context, memberName, filePath, lineNumber));  
         }
 
+        public override void Fatal(
+            Exception exception, 
+            string context = "",
+            [CallerMemberName] string memberName = "",
+            [CallerFilePath] string filePath = "",
+            [CallerLineNumber] int lineNumber = 0)
+        {
+            throw new NotImplementedException();
+        }
+
         public override void Error(
             string message,
             string context = "",
@@ -188,7 +198,6 @@ namespace LoggerHelper
 
             LogManager.Configuration = config;
             _nlog = LogManager.GetCurrentClassLogger();
-        }
-
+        }       
     }
 }

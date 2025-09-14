@@ -28,11 +28,14 @@ namespace QueueServiceWebApp.Controllers
                             Properties.Settings.Default.LogFileSizeMB,
                             "CicController") }
                     ));
-
-            _queueServiceCic = new QueueServiceCic(
-                QueueType.MSMQ,
-                true,
-                _logger);
+            try
+            {
+                _queueServiceCic = new QueueServiceCic(QueueType.MSMQ, true, _logger);
+            }
+            catch (Exception ex)
+            {
+                _logger.Fatal(ex);
+            }
         }
 
         public CicController(IQueueServiceCic queueServiceCic)

@@ -33,8 +33,14 @@ namespace QueueServiceWebApp.Controllers
                             Properties.Settings.Default.LogFileSizeMB,
                             "ImanageController") }
                     ));
-
-            _queueServiceImanage = new QueueServiceImanage(QueueType.MSMQ, true, _logger);
+            try
+            {
+                _queueServiceImanage = new QueueServiceImanage(QueueType.MSMQ, true, _logger);
+            }
+            catch (Exception ex)
+            {
+                _logger.Fatal(ex);
+            }
 
             if (HttpContext.Current != null)
                 _imanageFileCachePath = HttpContext.Current.Server.MapPath("~/App_Data/uploads");

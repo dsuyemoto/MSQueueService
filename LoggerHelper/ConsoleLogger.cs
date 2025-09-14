@@ -22,6 +22,17 @@ namespace LoggerHelper
             if (!_isEnabled) return;
             Console.WriteLine("[FATAL] " + message);
         }
+        public override void Fatal(
+            Exception exception,
+            string context = "",
+            [CallerMemberName] string memberName = "",
+            [CallerFilePath] string filePath = "",
+            [CallerLineNumber] int lineNumber = 0)
+        {
+            if (exception == null || !_isEnabled) return;
+            var message = exception.Message + Environment.NewLine + exception.StackTrace;
+            Error(message, context, memberName, filePath, lineNumber);
+        }
         public override void Error(
             string message,
             string context = "",

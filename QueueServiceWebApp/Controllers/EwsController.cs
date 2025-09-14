@@ -34,8 +34,14 @@ namespace QueueServiceWebApp.Controllers
                             Properties.Settings.Default.LogFileSizeMB,
                             "EwsController") }
                     ));
-
-            _queueServiceEws = new QueueServiceEws(QueueType.MSMQ, true, _logger);
+            try
+            {
+                _queueServiceEws = new QueueServiceEws(QueueType.MSMQ, true, _logger);
+            }
+            catch (Exception ex)
+            {
+                _logger.Fatal(ex);
+            }
         }
 
         [Route("emails/{messageidbase64}")]

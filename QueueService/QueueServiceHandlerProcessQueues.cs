@@ -33,7 +33,15 @@ namespace QueueService
         {
             _logger.Info("Starting " + _queueService.RequestQueueName + " handler");
 
-            _queueService.ProcessQueue(_callbackFunction, _cancellationTokenSource.Token, _retries);
+            try
+            {
+                _queueService.ProcessQueue(_callbackFunction, _cancellationTokenSource.Token, _retries);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex);
+                Stop();
+            }
         }
 
         public override void Stop()
